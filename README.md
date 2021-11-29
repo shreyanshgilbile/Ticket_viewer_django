@@ -5,7 +5,7 @@ This is another implementation of the zendesk coding challenge using django.
 
 Running the applicaton enter the following command
 
-python manage.py runserver
+      python manage.py runserver
 
 settings.py contains the id and password of zendesk login
 
