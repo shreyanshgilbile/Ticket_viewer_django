@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+        h1 {
+            color: #03363d;
+            padding: 5px;
+            text-align: center
+        }
+        
+        .hiddendiv {
+            display: none;
+            height: 200px;
+        }
+        
+        .clicker:focus~.hiddendiv {
+            display: block;
+        }
+        
+        .tickets-list li {
+            font-size: 1.1em;
+            margin-top: 1em;
+            border: 1px solid #33333378;
+            border: 1px solid #33333378;
+            border-radius: 10px;
+            padding: 10px;
+            padding-left: 10px;
+        }
+        
+        .tickets-item:hover {
+            cursor: pointer;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            padding-left: 5vw;
+            padding-right: 5vw;
+        }
+        
+        .ticket-details {
+            display: none;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+        }
+        
+        .ticket-details div {
+            padding-top: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 5px;
+        }
+    </style>
+    <title>Zendesk Coding Challenge</title>
+</head>
+
+<body>
+
+    <h1> Zendesk Coding Challenge </h1>
+
+    <div class="container">
+        {% for item, val in list_items.items %}
+        <ul class="tickets-list">
+            <li class="tickets-item">
+                <div class="clicker" tabindex="1">
+                    <b>{{item}}</b>
+                </div>
+
+                <br>
+                <article class="ticket-details"></article>
+                <div class="hiddendiv">
+                    <b>description:</b>
+                    <p>
+                        {{val.description}}
+                    </p>
+
+                    <b>status:</b>
+                    <p>{{val.status}} </p>
+                </div>
+                </article>
+            </li>
+        </ul>
+        <br><br> {% endfor %}
+    </div>
+
+    <div>
+        <button>
+	<a href= "{{ prev_page}}">
+	    <input type="submit" value="Go to Previous Page" />
+	</a>
+	</button> {{page}} - {{total_page}}
+        <button>
+	<a href= "{{next_page}}">
+	    <input type="submit" value="Go to   Next  Page" />
+	</a>
+	</button>
+    </div>
+</body>
+
+</html>
