@@ -3,6 +3,10 @@ made using django
 
 This is another implementation of the zendesk coding challenge using django.
 
+requirements:
+      
+      python and django
+
 Running the applicaton enter the following command
 
       python manage.py runserver
